@@ -88,4 +88,14 @@ class Student
     end
   end
 
+  def self.first_X_students_in_grade_10(number)
+    sql = <<-SQL
+      SELECT *
+      FROM students
+      WHERE grade = 10
+      -- ORDER BY student.id
+      LIMIT ?
+    SQL
+  end
+
 end
